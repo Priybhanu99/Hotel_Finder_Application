@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Hotel Finder</string>
+    <string name="title_activity_admin_page">Admin_page</string>
+    <string name="title_activity_user_page">User_page</string>
+</resources>
