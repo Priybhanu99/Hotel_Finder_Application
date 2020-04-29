@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/user1"
-    tools:context=".Admin_Page">
+    tools:context=".User_Page">
 
 
     <TextView
@@ -137,6 +137,7 @@
         android:layout_marginStart="124dp"
         android:layout_marginLeft="124dp"
         android:layout_marginTop="16dp"
+        android:onClick="dothis"
         android:text="Available Options"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup2" />

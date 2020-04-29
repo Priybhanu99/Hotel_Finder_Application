@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/admin_page_background"
-    tools:context=".User_Page">
+    tools:context=".Admin_Page">
 
     <TextView
         android:id="@+id/textView4"
@@ -46,6 +46,7 @@
         android:layout_marginTop="40dp"
 
         android:layout_marginBottom="28dp"
+        android:onClick="addroom"
         android:text="Add a Room"
         android:textSize="20dp"
         android:textStyle="italic"
