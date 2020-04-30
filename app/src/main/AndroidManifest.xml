@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".Adding"></activity>
+        <activity android:name=".Details"></activity>
+        <activity android:name=".Adding" />
         <activity android:name=".User_Page" />
         <activity android:name=".Admin_Page" />
         <activity android:name=".MainActivity">
