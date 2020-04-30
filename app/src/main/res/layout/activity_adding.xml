@@ -52,7 +52,7 @@
         android:layout_marginTop="36dp"
         android:ems="10"
         android:hint="Room Size"
-        android:inputType="textPersonName"
+        android:inputType="numberSigned"
         app:layout_constraintStart_toStartOf="@+id/editText_type"
         app:layout_constraintTop_toBottomOf="@+id/editText_type" />
 
@@ -63,7 +63,7 @@
         android:layout_marginTop="36dp"
         android:ems="10"
         android:hint="Price"
-        android:inputType="textPersonName"
+        android:inputType="numberSigned"
         app:layout_constraintStart_toStartOf="@+id/editText_size"
         app:layout_constraintTop_toBottomOf="@+id/editText_size" />
 
