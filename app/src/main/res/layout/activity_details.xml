@@ -6,4 +6,72 @@
     android:layout_height="match_parent"
     tools:context=".Details">
 
+    <TextView
+        android:id="@+id/heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="180dp"
+        android:layout_marginLeft="180dp"
+        android:layout_marginTop="56dp"
+        android:textSize="36sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText7"
+        android:layout_width="250dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="63dp"
+        android:ems="10"
+        android:hint="Wfi (Available/Not Available)"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText6" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="247dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="192dp"
+        android:ems="10"
+        android:hint="No of beds"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/editText5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="252dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="59dp"
+        android:ems="10"
+        android:hint="No of washrooms"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/editText6"
+        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+
+    <EditText
+        android:id="@+id/editText6"
+        android:layout_width="248dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="67dp"
+        android:ems="10"
+        android:hint="Service charge"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/editText7"
+        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="149dp"
+        android:layout_marginLeft="149dp"
+        android:layout_marginTop="43dp"
+        android:text="ADD"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText7" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
