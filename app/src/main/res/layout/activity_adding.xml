@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/user_background"
+    android:hapticFeedbackEnabled="false"
     tools:context=".Adding">
 
 
@@ -14,56 +16,66 @@
         android:layout_marginStart="104dp"
         android:layout_marginLeft="104dp"
         android:layout_marginTop="60dp"
+        android:background="#56FFFFFF"
         android:text="Add a Room"
         android:textSize="36sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editText_status"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="217dp"
+        android:layout_height="32dp"
         android:layout_marginStart="66dp"
         android:layout_marginLeft="66dp"
         android:layout_marginTop="45dp"
+        android:background="#FFFFFF"
         android:ems="10"
         android:hint="Availability"
         android:inputType="textPersonName"
+        android:textStyle="normal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_price" />
 
     <EditText
         android:id="@+id/editText_type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="223dp"
+        android:layout_height="38dp"
         android:layout_marginStart="66dp"
         android:layout_marginLeft="66dp"
         android:layout_marginTop="64dp"
+        android:background="#FFFFFF"
         android:ems="10"
         android:hint="Room Type"
         android:inputType="textPersonName"
+        android:textStyle="normal"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <EditText
         android:id="@+id/editText_size"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="213dp"
+        android:layout_height="33dp"
         android:layout_marginTop="36dp"
+        android:background="#FFFFFF"
         android:ems="10"
         android:hint="Room Size"
         android:inputType="numberSigned"
+        android:textStyle="normal"
         app:layout_constraintStart_toStartOf="@+id/editText_type"
         app:layout_constraintTop_toBottomOf="@+id/editText_type" />
 
     <EditText
         android:id="@+id/editText_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="217dp"
+        android:layout_height="33dp"
         android:layout_marginTop="36dp"
+        android:background="#FFFFFF"
         android:ems="10"
         android:hint="Price"
         android:inputType="numberSigned"
+        android:textStyle="normal"
         app:layout_constraintStart_toStartOf="@+id/editText_size"
         app:layout_constraintTop_toBottomOf="@+id/editText_size" />
 
@@ -78,6 +90,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="184dp"
         android:text="ADD"
+        android:background="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -92,6 +105,7 @@
         android:layout_marginStart="112dp"
         android:layout_marginLeft="112dp"
         android:layout_marginTop="36dp"
+        android:background="#FFFFFF"
         android:onClick="hotel_details"
         android:text="Additional details"
         app:layout_constraintStart_toStartOf="parent"
@@ -105,7 +119,9 @@
         android:layout_marginEnd="108dp"
         android:layout_marginRight="108dp"
         android:layout_marginBottom="184dp"
+        android:background="#FFFFFF"
         android:text="View All"
+        android:textStyle="normal"
         app:layout_constraintBottom_toTopOf="@+id/button8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_status"

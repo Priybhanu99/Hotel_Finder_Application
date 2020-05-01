@@ -92,6 +92,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return res;
     }
 
+    public int print_revenue()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor c;
+        int amount;
+        c = db.rawQuery(" select SUM ( "+ COL_4 +") from " + TABLE_NAME , null);
+        if (c.getCount() == 0) {
+           return 1;
+        }
+        if(c.moveToFirst())
+            amount = c.getInt(0);
+        else
+            amount = -1;
+        c.close();
+
+        return amount;
+    }
 
 
 }

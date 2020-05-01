@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(),Admin_Page.class);
             startActivity(intent);
         }else if(s1.equals("user") && s2.equals("user")){
-            Intent intent = new Intent(getApplicationContext(), User_Page.class);
+            Intent intent = new Intent(getApplicationContext(), User_first.class);
             startActivity(intent);
         }else{
             Toast t = Toast.makeText(getApplicationContext(),"Bsdk password sahi daal",Toast.LENGTH_SHORT);

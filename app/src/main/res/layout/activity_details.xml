@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/admin_page"
     tools:context=".Details"
     tools:ignore="ExtraText">
 
@@ -15,6 +16,7 @@
         android:layout_marginLeft="150dp"
         android:layout_marginTop="56dp"
         android:textSize="36sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,6 +28,7 @@
         android:layout_marginLeft="65dp"
         android:layout_marginTop="63dp"
         android:ems="10"
+        android:background="#FFFFFF"
         android:hint="Wifi (Available/Not Available)"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,6 +47,7 @@
         android:layout_marginStart="64dp"
         android:layout_marginLeft="64dp"
         android:layout_marginTop="184dp"
+        android:background="#FFFFFF"
         android:ems="10"
         android:hint="No of beds"
         android:inputType="numberSigned"
@@ -56,6 +60,7 @@
         android:layout_height="46dp"
         android:layout_marginTop="59dp"
         android:ems="10"
+        android:background="#FFFFFF"
         android:hint="No of washrooms"
         android:inputType="numberSigned"
         app:layout_constraintStart_toStartOf="@+id/service"
@@ -67,6 +72,7 @@
         android:layout_height="43dp"
         android:layout_marginTop="67dp"
         android:ems="10"
+        android:background="#FFFFFF"
         android:hint="Service charge"
         android:inputType="numberSigned"
         app:layout_constraintStart_toStartOf="@+id/wifi"
