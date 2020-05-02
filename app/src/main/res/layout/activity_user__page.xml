@@ -91,7 +91,7 @@
 
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/cash"
             android:layout_width="wrap_content"
             android:layout_height="55dp"
             android:layout_gravity="left"
@@ -101,7 +101,7 @@
             android:textSize="25dp" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/paytm"
             android:layout_width="wrap_content"
             android:layout_height="55dp"
             android:layout_gravity="left"

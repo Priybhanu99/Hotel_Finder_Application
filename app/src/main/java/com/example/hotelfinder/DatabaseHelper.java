@@ -25,6 +25,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DES_col4 = "Service_charge";
     public static final String DES_col5 = "Wifi";
 
+    public static final String USER = "user";
+    public static final String USER_col1 = "user_id";
+    public static final String USER_col2 = "user_name";
+    public static final String USER_col3 = "arrival_date";
+    public static final String USER_col4 = "departure_date";
+    public static final String USER_col5 = "payment_mode";
+
     public DatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
@@ -35,6 +42,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("create table " + TABLE_NAME + "(room_id INTEGER PRIMARY KEY AUTOINCREMENT, type TEXT, size INT, price INT, status TEXT" +
                 ",FOREIGN KEY(type) references description (room_type)" +
                 ")");
+        db.execSQL("create table " + USER + "(user_id INTEGER PRIMARY KEY AUTOINCREMENT, user_name TEXT , arrival_date TEXT, departure_date TEXT, mode_of_payment TEXT)");
+
+
     }
 
     @Override
@@ -44,6 +54,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.execSQL("DROP TABLE IF EXISTS " +DESCRIPTION);
         onCreate(db);
+
+        db.execSQL("DROP TABLE IF EXISTS " +USER);
+        onCreate(db);
+
+
     }
 
     public boolean insertData(String type, String size, int price, String status)
@@ -56,6 +71,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL_4, price);
         contentValues.put(COL_5, status);
         long result = db.insert(TABLE_NAME, null, contentValues);
+        if(result==-1)
+            return false;
+        else
+            return true;
+    }
+
+    public boolean user_data(String name, String arrival_time,String departure_time,String mode_of_payment)
+    {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(USER_col2, name);
+        contentValues.put(USER_col3, arrival_time);
+        contentValues.put(USER_col4, departure_time);
+        contentValues.put(USER_col5, mode_of_payment);
+        long result = db.insert(USER, null, contentValues);
         if(result==-1)
             return false;
         else
