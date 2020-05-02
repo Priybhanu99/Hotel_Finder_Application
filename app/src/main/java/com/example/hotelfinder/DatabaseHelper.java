@@ -169,4 +169,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         res = db.rawQuery(" select * from " + TABLE_NAME + " where " + COL_5 + "='Available' ", null);
         return res;
     }
+
+    public Cursor print_advanced(String type,int budget) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+
+        Cursor res;
+        res = db.rawQuery(" select * from " + TABLE_NAME + " where " + COL_4 + " <= " + budget + " and type = '" + type + "'" , null);
+
+        return res;
+
+    }
 }
+
