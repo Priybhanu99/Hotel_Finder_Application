@@ -102,21 +102,21 @@ public class Admin_Page extends AppCompatActivity {
 
                     @Override
                     public void onClick(View v) {
-//                       // Toast.makeText(getApplicationContext(),"hello there",Toast.LENGTH_SHORT);
-                        int amount =myDb.print_unbooked();
+                       Cursor res=myDb.print_unbooked();
+                        if (res.getCount() == 0) {
+                            showMessage("Error", "Nothing Found");
+                            return;
+                        }
+                        StringBuffer buffer=new StringBuffer();
+                        while (res.moveToNext()) {
+                            buffer.append("ROOM_ID: " + res.getString(0) + "\n");
+                            buffer.append("Type: " + res.getString(1) + "\n");
+                            buffer.append("Size: " + res.getString(2) + "\n");
+                            buffer.append("Price: " + res.getString(3) + "\n");
+                            buffer.append("Status: " + res.getString(4) + "\n\n");
 
-                        showMessage("Number of Rooms Available: ",Integer.toString(amount));
-//                        Cursor res=myDb.print_revenue();
-//                        if (res.getCount() == 0) {
-//                            showMessage("Error", "Nothing Found");
-//                            return;
-//                        }
-//                        StringBuffer buffer=new StringBuffer();
-//                        while (res.moveToNext()) {
-//                            String s = Integer.toString(res.getInt(0));
-//                            buffer.append("Revenue Generated: " + s + "\n");
-//                        }
-//                        showMessage("Data", buffer.toString());
+                        }
+                        showMessage("Data", buffer.toString());
                     }
                 }
 
