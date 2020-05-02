@@ -123,6 +123,7 @@ public class Admin_Page extends AppCompatActivity {
         );
 
     }
+
         public void showMessage(String title, String ans){
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setCancelable(true);
@@ -131,3 +132,4 @@ public class Admin_Page extends AppCompatActivity {
             builder.show();
         }
 }
+

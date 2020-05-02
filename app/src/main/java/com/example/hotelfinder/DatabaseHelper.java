@@ -78,21 +78,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
     }
 
-//    public boolean user_data(String name, String arrival_time,String departure_time,String mode_of_payment)
-//    {
-//
-//        SQLiteDatabase db = this.getWritableDatabase();
-//        ContentValues contentValues = new ContentValues();
-//        contentValues.put(USER_col2, name);
-//        contentValues.put(USER_col3, arrival_time);
-//        contentValues.put(USER_col4, departure_time);
-//        contentValues.put(USER_col5, mode_of_payment);
-//        long result = db.insert(USER, null, contentValues);
-//        if(result==-1)
-//            return false;
-//        else
-//            return true;
-//    }
 
     public boolean add_data_for_roomdescription(String type,int beds,int washrooms,int service,String wifi){
         SQLiteDatabase db = this.getWritableDatabase();
