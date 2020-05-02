@@ -176,9 +176,33 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
         Cursor res;
-        res = db.rawQuery(" select * from " + TABLE_NAME + " where " + COL_4 + " <= " + budget + " and type = '" + type + "'" , null);
+        res = db.rawQuery(" select * from " + TABLE_NAME + " where " + COL_4 + " <= " + budget + " and type = '" + type + "' and status = 'Available'"  , null);
 
         return res;
+
+    }
+
+    public int booking(int parseInt) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        String strSQL = "UPDATE " + TABLE_NAME + " SET status = 'Unvailable' WHERE room_id = "+ parseInt;
+            db.execSQL(strSQL);
+
+        Cursor c;
+        int amount;
+        c = db.rawQuery(" select SUM ( "+ COL_4 +") from " + TABLE_NAME + " WHERE room_id = " + parseInt, null);
+        if (c.getCount() == 0) {
+            return 1;
+        }
+        if(c.moveToFirst())
+            amount = c.getInt(0);
+        else
+            amount = -1;
+        c.close();
+
+        return amount;
+
 
     }
 }

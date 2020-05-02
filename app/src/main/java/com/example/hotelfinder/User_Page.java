@@ -12,9 +12,11 @@ import android.widget.EditText;
 public class User_Page extends AppCompatActivity {
 
     DatabaseHelper myDb = new DatabaseHelper(this);
-    EditText e1,e2;
+    EditText e1,e2,e3;
     Button unbooked_bttn;
     Button advanced_search;
+    Button book_room;
+
 
 
     @Override
@@ -23,9 +25,13 @@ public class User_Page extends AppCompatActivity {
         setContentView(R.layout.activity_user__page);
         unbooked_bttn = (Button)findViewById(R.id.all_available);
         advanced_search = (Button)findViewById(R.id.advanced);
+        book_room = (Button)findViewById(R.id.booking);
+
         e1 =(EditText)findViewById(R.id.type);
         e2 =(EditText)findViewById(R.id.budget);
+        e3 =(EditText)findViewById(R.id.room_id);
 
+        book_a_room();
         find_available();
         advanced_search();
     }
@@ -67,7 +73,7 @@ public class User_Page extends AppCompatActivity {
                         Cursor res=myDb.print_advanced(e1.getText().toString(),
                                 Integer.parseInt(e2.getText().toString()));
                         if (res.getCount() == 0) {
-                            showMessage("Error", "No Rooms Match your Criteria!");
+                            showMessage("Error", "No Available Rooms Match your Criteria!");
                             return;
                         }
                         StringBuffer buffer=new StringBuffer();
@@ -87,6 +93,21 @@ public class User_Page extends AppCompatActivity {
 
     }
 
+    public void book_a_room()
+    {
+        book_room.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                            int amount = myDb.booking(Integer.parseInt(e3.getText().toString()));
+                        showMessage("Congratulations Room booked!\nPlease make a payment of : ",Integer.toString(amount));
+
+
+                    }
+                }
+        );
+    }
+
 
     public void showMessage(String title, String ans){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -100,3 +121,5 @@ public class User_Page extends AppCompatActivity {
 
     }
 }
+
+
