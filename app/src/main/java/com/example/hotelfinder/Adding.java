@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 public class Adding extends AppCompatActivity {
 
-    DatabaseHelper myDb;
+    DatabaseHelper myDb = new DatabaseHelper(this);
     EditText editSize,editType,editPrice,editStatus;
     Button btnAddData;
     Button btnViewAll;

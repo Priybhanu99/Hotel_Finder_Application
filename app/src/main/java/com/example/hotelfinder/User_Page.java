@@ -12,4 +12,8 @@ public class User_Page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user__page);
     }
+
+    public void dothis(View view){
+
+    }
 }

@@ -25,6 +25,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String DES_col4 = "Service_charge";
     public static final String DES_col5 = "Wifi";
 
+    public static final String USER = "user";
+    public static final String USER_col1 = "user_id";
+    public static final String USER_col2 = "user_name";
+    public static final String USER_col3 = "arrival_date";
+    public static final String USER_col4 = "departure_date";
+    public static final String USER_col5 = "mode_of_payment";
+
     public DatabaseHelper(@Nullable Context context) {
         super(context, DATABASE_NAME, null, 1);
     }
@@ -35,6 +42,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("create table " + TABLE_NAME + "(room_id INTEGER PRIMARY KEY AUTOINCREMENT, type TEXT, size INT, price INT, status TEXT" +
                 ",FOREIGN KEY(type) references description (room_type)" +
                 ")");
+
+        db.execSQL("create table " + USER + "(user_id INTEGER PRIMARY KEY AUTOINCREMENT, user_name TEXT , arrival_date TEXT, departure_date TEXT, mode_of_payment TEXT)");
+
+
     }
 
     @Override
@@ -44,6 +55,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         db.execSQL("DROP TABLE IF EXISTS " +DESCRIPTION);
         onCreate(db);
+
+        db.execSQL("DROP TABLE IF EXISTS " +USER);
+        onCreate(db);
+
+
     }
 
     public boolean insertData(String type, String size, int price, String status)
@@ -62,6 +78,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
     }
 
+
     public boolean add_data_for_roomdescription(String type,int beds,int washrooms,int service,String wifi){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -71,6 +88,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(DES_col4, service);
         contentValues.put(DES_col5, wifi);
         long result = db.insert(DESCRIPTION, null, contentValues);
+        if(result==-1)
+            return false;
+        else
+            return true;
+
+    }
+
+    public boolean insert_user(String name, String arrival, String departure, String mode)
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+        cv.put(USER_col2,name);
+        cv.put(USER_col3,arrival);
+        cv.put(USER_col4,departure);
+        cv.put(USER_col5,mode);
+        long result = db.insert(USER, null, cv);
         if(result==-1)
             return false;
         else
@@ -92,6 +125,59 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return res;
     }
 
+    public int print_revenue()
+    {
+        SQLiteDatabase db = this.getWritableDatabase();
 
+        Cursor c;
+        int amount;
+        c = db.rawQuery(" select SUM ( "+ COL_4 +") from " + TABLE_NAME , null);
+        if (c.getCount() == 0) {
+           return 1;
+        }
+        if(c.moveToFirst())
+            amount = c.getInt(0);
+        else
+            amount = -1;
+        c.close();
 
+        return amount;
+    }
+
+    public int print_booked() {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor c;
+        int amount;
+        c = db.rawQuery(" select COUNT(*) from " + TABLE_NAME + " where " + COL_5 + "='Unavailable' ", null);
+        if (c.getCount() == 0) {
+            return 1;
+        }
+        if(c.moveToFirst())
+            amount = c.getInt(0);
+        else
+            amount = -1;
+        c.close();
+
+        return amount;
+    }
+
+    public int print_unbooked() {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        Cursor c;
+        int amount;
+        c = db.rawQuery(" select COUNT(*) from " + TABLE_NAME + " where " + COL_5 + "='Available' ", null);
+        if (c.getCount() == 0) {
+            return 1;
+        }
+        if(c.moveToFirst())
+            amount = c.getInt(0);
+        else
+            amount = -1;
+        c.close();
+
+        return amount;
+    }
 }

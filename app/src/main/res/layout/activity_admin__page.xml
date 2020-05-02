@@ -50,13 +50,13 @@
         android:text="Add a Room"
         android:textSize="20dp"
         android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintBottom_toTopOf="@+id/revenue"
         app:layout_constraintStart_toStartOf="@+id/textView6"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/revenue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"
@@ -65,12 +65,12 @@
         android:text="Total Revenue generated"
         android:textSize="20dp"
         android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/button5"
-        app:layout_constraintStart_toStartOf="@+id/button5"
+        app:layout_constraintBottom_toTopOf="@+id/booked"
+        app:layout_constraintStart_toStartOf="@+id/booked"
         app:layout_constraintTop_toBottomOf="@+id/button3" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/booked"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="28dp"
@@ -79,12 +79,12 @@
         android:text="Total no of hotels booked"
         android:textSize="20dp"
         android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/button6"
+        app:layout_constraintBottom_toTopOf="@+id/unbooked"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
+        app:layout_constraintTop_toBottomOf="@+id/revenue" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/unbooked"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="225dp"
@@ -92,6 +92,6 @@
         android:textSize="20dp"
         android:textStyle="italic"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/button5"
-        app:layout_constraintTop_toBottomOf="@+id/button5" />
+        app:layout_constraintStart_toStartOf="@+id/booked"
+        app:layout_constraintTop_toBottomOf="@+id/booked" />
 </androidx.constraintlayout.widget.ConstraintLayout>
