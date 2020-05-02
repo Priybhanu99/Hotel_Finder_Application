@@ -93,11 +93,14 @@
         android:id="@+id/description_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="75dp"
+        android:layout_marginLeft="75dp"
         android:layout_marginTop="36dp"
         android:layout_marginEnd="80dp"
         android:layout_marginRight="80dp"
         android:text="View All"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/addthis"
         app:layout_constraintTop_toBottomOf="@+id/wifi" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

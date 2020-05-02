@@ -163,21 +163,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return amount;
     }
 
-    public int print_unbooked() {
+    public Cursor print_unbooked() {
         SQLiteDatabase db = this.getWritableDatabase();
-
-        Cursor c;
-        int amount;
-        c = db.rawQuery(" select COUNT(*) from " + TABLE_NAME + " where " + COL_5 + "='Available' ", null);
-        if (c.getCount() == 0) {
-            return 1;
-        }
-        if(c.moveToFirst())
-            amount = c.getInt(0);
-        else
-            amount = -1;
-        c.close();
-
-        return amount;
+        Cursor res;
+        res = db.rawQuery(" select * from " + TABLE_NAME + " where " + COL_5 + "='Available' ", null);
+        return res;
     }
 }

@@ -90,9 +90,6 @@ public class Adding extends AppCompatActivity {
     }
 
 
-
-
-
     public void hotel_details(View view) {
         Intent intent= new Intent(getApplicationContext(),Details.class);
         intent.putExtra("user",editType.getText().toString());
