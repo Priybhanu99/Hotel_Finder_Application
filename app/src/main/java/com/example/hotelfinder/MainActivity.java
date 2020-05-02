@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), User_first.class);
             startActivity(intent);
         }else{
-            Toast t = Toast.makeText(getApplicationContext(),"Bsdk password sahi daal",Toast.LENGTH_SHORT);
+            Toast t = Toast.makeText(getApplicationContext(),"Incorrect Credentials",Toast.LENGTH_SHORT);
             t.show();
         }
     }

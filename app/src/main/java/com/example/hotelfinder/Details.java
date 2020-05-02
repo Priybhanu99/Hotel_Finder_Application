@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class Details extends AppCompatActivity {
 
-    DatabaseHelper MYDb;
+    DatabaseHelper MYDb=new DatabaseHelper(this);
     EditText e1,e2,e3,e4,e5;
     Button addthis;
     Button btnViewAll;
@@ -23,7 +23,6 @@ public class Details extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
         MYDb = new DatabaseHelper(this);
-
         EditText t1 = (EditText) findViewById(R.id.heading);
         Bundle b1 = getIntent().getExtras();
         String str = b1.getString("user");

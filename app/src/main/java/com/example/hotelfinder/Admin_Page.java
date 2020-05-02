@@ -13,15 +13,25 @@ import android.widget.Toast;
 
 public class Admin_Page extends AppCompatActivity {
 
-    DatabaseHelper myDb;
+    DatabaseHelper myDb=new DatabaseHelper(this);
     Button revenue_bttn;
+    Button booked_bttn;
+    Button unbooked_bttn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin__page);
 
         revenue_bttn = (Button)findViewById(R.id.revenue);
+        booked_bttn = (Button)findViewById(R.id.booked);
+        unbooked_bttn = (Button)findViewById(R.id.unbooked);
+
+
         find_revenue();
+        find_unavailable();
+        find_available();
+
+
     }
 
     public void addroom(View view){
@@ -40,6 +50,62 @@ public class Admin_Page extends AppCompatActivity {
                         int amount =myDb.print_revenue();
 
                        showMessage("Total Revenue Generated :",Integer.toString(amount));
+//                        Cursor res=myDb.print_revenue();
+//                        if (res.getCount() == 0) {
+//                            showMessage("Error", "Nothing Found");
+//                            return;
+//                        }
+//                        StringBuffer buffer=new StringBuffer();
+//                        while (res.moveToNext()) {
+//                            String s = Integer.toString(res.getInt(0));
+//                            buffer.append("Revenue Generated: " + s + "\n");
+//                        }
+//                        showMessage("Data", buffer.toString());
+                    }
+                }
+
+        );
+
+    }
+
+    public void find_unavailable(){
+        booked_bttn.setOnClickListener(
+                new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+//                       // Toast.makeText(getApplicationContext(),"hello there",Toast.LENGTH_SHORT);
+                        int amount =myDb.print_booked();
+
+                        showMessage("Number of rooms booked: ",Integer.toString(amount));
+//                        Cursor res=myDb.print_revenue();
+//                        if (res.getCount() == 0) {
+//                            showMessage("Error", "Nothing Found");
+//                            return;
+//                        }
+//                        StringBuffer buffer=new StringBuffer();
+//                        while (res.moveToNext()) {
+//                            String s = Integer.toString(res.getInt(0));
+//                            buffer.append("Revenue Generated: " + s + "\n");
+//                        }
+//                        showMessage("Data", buffer.toString());
+                    }
+                }
+
+        );
+
+    }
+
+    public void find_available(){
+        unbooked_bttn.setOnClickListener(
+                new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+//                       // Toast.makeText(getApplicationContext(),"hello there",Toast.LENGTH_SHORT);
+                        int amount =myDb.print_unbooked();
+
+                        showMessage("Number of Rooms Available: ",Integer.toString(amount));
 //                        Cursor res=myDb.print_revenue();
 //                        if (res.getCount() == 0) {
 //                            showMessage("Error", "Nothing Found");
