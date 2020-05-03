@@ -131,7 +131,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         Cursor c;
         int amount;
-        c = db.rawQuery(" select SUM ( "+ COL_4 +") from " + TABLE_NAME , null);
+        c = db.rawQuery(" select SUM ( "+ COL_4 +") from (SELECT * from room_table where status = 'Unavailable')" + TABLE_NAME , null);
         if (c.getCount() == 0) {
            return 1;
         }
@@ -143,6 +143,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return amount;
     }
+
+
 
     public int print_booked() {
 
@@ -186,7 +188,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
-        String strSQL = "UPDATE " + TABLE_NAME + " SET status = 'Unvailable' WHERE room_id = "+ parseInt;
+        String strSQL = "UPDATE " + TABLE_NAME + " SET status = 'Unavailable' WHERE room_id = "+ parseInt;
             db.execSQL(strSQL);
 
         Cursor c;
@@ -203,6 +205,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return amount;
 
+    }
+
+    public Cursor list_customers(String letter) {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+
+
+        Cursor res;
+        res = db.rawQuery(" select user_id, user_name, mode_of_payment from " + USER + " where user_name like '" + letter+ "%'" , null);
+
+        return res;
 
     }
 }
