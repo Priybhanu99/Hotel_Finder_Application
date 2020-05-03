@@ -7,6 +7,40 @@
     android:background="@drawable/admin_page_background"
     tools:context=".Admin_Page">
 
+    <EditText
+        android:id="@+id/letter"
+        android:layout_width="250dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginRight="61dp"
+        android:background="#FFFFFF"
+        android:ems="10"
+        android:hint="Enter the first letter of name"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customers" />
+
+    <Button
+        android:id="@+id/customers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="82dp"
+        android:layout_marginLeft="82dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginRight="28dp"
+        android:text="Show list of customers"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.153"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/unbooked" />
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
@@ -41,8 +75,8 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="40dp"
 
         android:layout_marginBottom="28dp"
@@ -53,7 +87,6 @@
         app:layout_constraintBottom_toTopOf="@+id/revenue"
         app:layout_constraintStart_toStartOf="@+id/textView6"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
 
     <Button
         android:id="@+id/revenue"

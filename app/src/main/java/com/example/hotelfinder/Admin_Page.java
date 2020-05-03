@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.os.Message;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 public class Admin_Page extends AppCompatActivity {
@@ -17,6 +18,8 @@ public class Admin_Page extends AppCompatActivity {
     Button revenue_bttn;
     Button booked_bttn;
     Button unbooked_bttn;
+    Button customer_list;
+    EditText e1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,12 +28,42 @@ public class Admin_Page extends AppCompatActivity {
         revenue_bttn = (Button)findViewById(R.id.revenue);
         booked_bttn = (Button)findViewById(R.id.booked);
         unbooked_bttn = (Button)findViewById(R.id.unbooked);
+        customer_list = (Button)findViewById(R.id.customers);
+        e1 =(EditText)findViewById(R.id.letter);
 
 
         find_revenue();
         find_unavailable();
         find_available();
+        list_of_customers();
 
+
+    }
+
+    private void list_of_customers() {
+
+        customer_list.setOnClickListener(
+                new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        Cursor res=myDb.list_customers(e1.getText().toString());
+                        if (res.getCount() == 0) {
+                            showMessage("Error", "Nothing Found");
+                            return;
+                        }
+                        StringBuffer buffer=new StringBuffer();
+                        while (res.moveToNext()) {
+                            buffer.append("Customer_id: " + res.getString(0) + "\n");
+                            buffer.append("Name: " + res.getString(1) + "\n");
+                            buffer.append("Mode of Payment: " + res.getString(2) + "\n\n");
+
+                        }
+                        showMessage("Data", buffer.toString());
+                    }
+                }
+
+        );
 
     }
 
