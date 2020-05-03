@@ -44,6 +44,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 ")");
 
         db.execSQL("create table " + USER + "(user_id INTEGER PRIMARY KEY AUTOINCREMENT, user_name TEXT , arrival_date TEXT, departure_date TEXT, mode_of_payment TEXT)");
+        db.execSQL("create table bill (bill_id integer primary key autoincrement, discount TEXT, discount_amount integer, room_id integer, price integer, foreign key(room_id) references room_table (room_id))");
 
 
     }
