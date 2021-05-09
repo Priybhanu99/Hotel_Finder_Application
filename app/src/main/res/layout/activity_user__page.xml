@@ -9,7 +9,28 @@
 
 
     <EditText
+<<<<<<< HEAD
         android:id="@+id/editText6"
+=======
+        android:id="@+id/room_id"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginStart="99dp"
+        android:layout_marginLeft="99dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="99dp"
+        android:layout_marginRight="99dp"
+        android:ems="10"
+        android:hint="Enter Room ID"
+        android:inputType="numberSigned"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/advanced" />
+
+    <EditText
+        android:id="@+id/budget"
+>>>>>>> 03d79086b5d30965c970e5eb26476265dd24f79e
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="65dp"
@@ -17,10 +38,17 @@
         android:layout_marginTop="53dp"
         android:ems="10"
         android:hint="Maximum budget"
+<<<<<<< HEAD
         android:inputType="textPersonName"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText5" />
+=======
+        android:inputType="numberSigned"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/type" />
+>>>>>>> 03d79086b5d30965c970e5eb26476265dd24f79e
 
     <TextView
         android:id="@+id/textView"
@@ -37,7 +65,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+<<<<<<< HEAD
         android:id="@+id/button2"
+=======
+        android:id="@+id/all_available"
+>>>>>>> 03d79086b5d30965c970e5eb26476265dd24f79e
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="117dp"
@@ -58,10 +90,17 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
+<<<<<<< HEAD
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <EditText
         android:id="@+id/editText5"
+=======
+        app:layout_constraintTop_toBottomOf="@+id/all_available" />
+
+    <EditText
+        android:id="@+id/type"
+>>>>>>> 03d79086b5d30965c970e5eb26476265dd24f79e
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="63dp"
@@ -75,6 +114,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <Button
+<<<<<<< HEAD
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -84,6 +124,32 @@
         android:text="SEARCH"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText6" />
+=======
+        android:id="@+id/advanced"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginTop="44dp"
+        android:text="SEARCH"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/budget" />
+
+    <Button
+        android:id="@+id/booking"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="63dp"
+        android:layout_marginLeft="63dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="82dp"
+        android:layout_marginRight="82dp"
+        android:text="Book Room"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toEndOf="@+id/advanced"
+        app:layout_constraintTop_toBottomOf="@+id/budget" />
+>>>>>>> 03d79086b5d30965c970e5eb26476265dd24f79e
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
